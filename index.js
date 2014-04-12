@@ -49,18 +49,18 @@ BitArray.prototype.set = function(arg) {
  *
  */
 BitArray.prototype.get = function() {
-  var result = [];
+  var obj = {};
   var _g = _get.bind(this);
   for (var i = 0; i < arguments.length; i++) {
     if (typeof arguments[i] === 'number') {
-      result.push(_g(arguments[i]));
+      obj[arguments[i]] = _g(arguments[i]);
     } else if (typeof arguments[i] === 'object') {
       for (var j = 0; j < arguments[i].length; j++) {
-        result.push(_g(arguments[i][j]));
+        obj[arguments[i][j]] = _g(arguments[i][j]);
       }
     }
   }
-  return result;
+  return obj;
 }
 
 /**
@@ -72,8 +72,9 @@ BitArray.prototype.get = function() {
 BitArray.prototype.toString = function() {
   var str = '';
   for (var i = 0; i < this.length; i++)  {
-    var bit = String(this.get(i));
-    str = str.concat(bit);
+    var obj = this.get(i);
+    if (i % 8 == 0 && i !== 0) str += ' '
+    str += String(obj[i]);
   }
   return str;
 }

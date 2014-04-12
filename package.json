@@ -1,6 +1,6 @@
 {
   "name": "simple-bitarray",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "\"A simple bit array for JS\"",
   "main": "index.js",
   "scripts": {

@@ -17,38 +17,50 @@ describe('BitArray.set()', function() {
 
 describe('BitArray.get()', function() {
   var arr = new bitarray(10);
-  it('should return [1,1,1,0]', function() {
+  it('should return {0: 1, 1: 1, 2: 1, 5: 0}', function() {
     arr.set(0,1,2);
-    arr.get(0,1,2,5).should.eql([1,1,1,0]);
+    arr.get(0,1,2,5).should.eql({
+      0: 1,
+      1: 1,
+      2: 1,
+      5: 0
+    });
   })
 
-  it('should return [1,1,1,1]', function() {
+  it('should return {0: 1, 1: 1, 2: 1, 5: 1}', function() {
     arr.set(5);
-    arr.get(0,1,2,5).should.eql([1,1,1,1]);
-    arr.get(7, 9).should.eql([0,0]);
+    arr.get(0,1,2,5).should.eql({
+      0: 1,
+      1: 1,
+      2: 1,
+      5: 1
+    });
   })
 
-  it('should return [0,0]', function() {
-    arr.get(7, 9).should.eql([0,0]);
+  it('should return {7: 0, 9: 0}', function() {
+    arr.get(7, 9).should.eql({
+      7: 0,
+      9: 0,
+    });
   })
   
 })
 
 describe('BitArray.toString()', function() {
-  it('should print out 0000000000', function() {
+  it('should print out 00000000 00', function() {
     var arr = new bitarray(10);
-    arr.toString().should.equal('0000000000');
+    arr.toString().should.equal('00000000 00');
   })
 
-  it('should print out 1000100001', function() {
+  it('should print out 10001000 01', function() {
     var arr = new bitarray(10);
     arr.set(9,4,0);
-    arr.toString().should.equal('1000100001');
+    arr.toString().should.equal('10001000 01');
   })
 
-  it('should print out 0000000100', function() {
+  it('should print out 00000001 00', function() {
     var arr = new bitarray(10);
     arr.set(7);
-    arr.toString().should.equal('0000000100');
+    arr.toString().should.equal('00000001 00');
   })
 })
