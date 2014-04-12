@@ -15,7 +15,7 @@ $ npm install bitarray
 ```js
 var bitarray = require('simple-bitarray');
 // Makes a bitarray of length 10
-var arr = bitarray(10);
+var arr = new bitarray(10);
 // Set the 0th 2nd and 3rd bit
 // Indexing starts at 0
 arr.set(0, 2, 3);
