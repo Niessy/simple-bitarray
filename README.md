@@ -32,3 +32,7 @@ arr.toString() // 10110000 00
 $ npm test
 ```
 
+## License
+
+MIT
+

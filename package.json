@@ -1,22 +1,21 @@
 {
   "name": "simple-bitarray",
-  "version": "0.0.4",
+  "version": "0.0.5",
+  "repository": {"type": "git", "url": "git://github.com/Niessy/simple-bitarray.git"},
   "description": "\"A simple bit array for JS\"",
-  "main": "index.js",
+  "keywords": [ "\"bits\"", "\"array\"", "\"bitarray\"" ],
+  "author": "Dominique Luna <dluna132@gmail.com>",
   "scripts": {
     "test": "make test"
   },
-  "dependencies": {
-  },
+  "dependencies": { },
   "devDependencies": {
     "mocha": "*",
     "should": "*"
   },
-  "keywords": [
-    "\"bits\"",
-    "\"array\"",
-    "\"bitarray\""
-  ],
-  "author": "Dominique Luna",
+  "engines": {
+   "node": "0.10.x"
+  },
+  "main": "index.js",
   "license": "MIT"
 }
