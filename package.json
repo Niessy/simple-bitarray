@@ -1,13 +1,12 @@
 {
-  "name": "bitarray",
-  "version": "0.0.0",
-  "description": "\"A simple bit array in JS\"",
+  "name": "simple-bitarray",
+  "version": "0.0.1",
+  "description": "\"A simple bit array for JS\"",
   "main": "index.js",
   "scripts": {
     "test": "make test"
   },
   "dependencies": {
-
   },
   "devDependencies": {
     "mocha": "*",
