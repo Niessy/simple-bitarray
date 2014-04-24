@@ -1,22 +1,25 @@
 /**
- * Expose BitArray
+ * Expose `BitArray`
  */
-module.exports = BitArray;
+
+module.exports = function(n) {
+  return new BitArray(n);
+};
 
 
 /**
  * Creates of bitarray of size n
  *
- * @param {Integer} n   the size of the bitarray
+ * @param {Int} n   the size of the bitarray
  *
  */
+
 function BitArray(n) {
   var elems = Math.ceil(n / 8);
   var arr = new Uint8Array(elems);
   this.array = arr;
   this.length = n;
   this.extraBits = arr.length * 8 - n;
-  return this;
 }
 
 /**
@@ -28,6 +31,7 @@ function BitArray(n) {
  * @param {Int | Array} arg
  *
  */
+
 BitArray.prototype.set = function(arg) {
   var _s = _set.bind(this);
   for (var i = 0; i < arguments.length; i++) {
@@ -48,6 +52,7 @@ BitArray.prototype.set = function(arg) {
  * @return {Int}  0 or 1
  *
  */
+
 BitArray.prototype.get = function() {
   var obj = {};
   var _g = _get.bind(this);
@@ -69,6 +74,7 @@ BitArray.prototype.get = function() {
  * @return {String}
  *
  */
+
 BitArray.prototype.toString = function() {
   var str = '';
   for (var i = 0; i < this.length; i++)  {
@@ -82,20 +88,25 @@ BitArray.prototype.toString = function() {
 /**
  * @api private
  */
+
 function _set(i) {
   var bit = i % 8;
   var byte = Math.floor(i/8);
-  var val = this.array.get(byte);
-  this.array.set(byte, val | 1<<bit);
+  var val = this.array[byte];
+  var temp = new Uint8Array(1);
+  temp[0] = val | 1<<bit;
+  this.array.set(temp, byte)
 }
 
 /**
  * @api private
+ * @return {Int}
  */
+
 function _get(i) {
   var bit = i % 8;
   var byte = Math.floor(i/8);
-  var val = this.array.get(byte);
+  var val = this.array[byte];
   // It's unset
   if (val === (val | 1<<bit)) {
     return 1;
