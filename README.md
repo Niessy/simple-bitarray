@@ -6,6 +6,8 @@ BitArray
 A very simple bitarray implementation, it uses Uint8Array under the hood, so
 at worst you'll have 7 extra bits.
 
+I don't know if Node 0.10.x has Uint8Array, if it does then it should work, but I haven't tested.
+
 ```
 $ npm install bitarray
 ```
@@ -15,7 +17,7 @@ $ npm install bitarray
 ```js
 var bitarray = require('simple-bitarray');
 // Makes a bitarray of length 10
-var arr = new bitarray(10);
+var arr = bitarray(10);
 // Set the 0th 2nd and 3rd bit
 // Indexing starts at 0
 arr.set(0, 2, 3);

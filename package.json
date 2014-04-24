@@ -1,6 +1,6 @@
 {
   "name": "simple-bitarray",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {"type": "git", "url": "git://github.com/Niessy/simple-bitarray.git"},
   "description": "\"A simple bit array for JS\"",
   "keywords": [ "\"bits\"", "\"array\"", "\"bitarray\"" ],
@@ -14,7 +14,8 @@
     "should": "*"
   },
   "engines": {
-   "node": "0.10.x"
+   "node": "0.10.x",
+   "node": "0.11.x"
   },
   "main": "index.js",
   "license": "MIT"
